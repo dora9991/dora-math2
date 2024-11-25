@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Math Battle Game</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+      .container {
+          display: flex; /* フレックスボックスを使用して横並びにする */
+          justify-content: space-around; /* 要素の間隔を均等にする */
+          margin: 20px; /* コンテナの外側にマージンを追加 */
+      }
+      .log {
+          max-height: 250px; /* 最大高さを設定 */
+          overflow-y: auto; /* 縦方向のスクロールを有効に */
+          border: 1px solid #ccc;
+          padding: 10px;
+      }
+      .monsterImage{
+        max-height: 300px;
+      }
+      .party, .enemy{
+        display: flex; /* フレックスボックスを使用して横並びにする */
+          align-items: center; /* 縦方向の中央揃え */
+      }
+      .party p {
+          margin: 0 10px; /* 各要素の間にマージンを追加 */
+      }
+      .result {
+          margin-top: 20px;
+          text-align: center;
+      }
+      #restartButton, #returnButton {
+          display: none;
+          margin: 10px;
+          padding: 10px 20px;
+          font-size: 16px;
+      }
+  </style>
+</head>
+<body>
+    <div class="screen" id="screen"></div>
+    <div class="game" id="game">
+        <h1>数学バトル</h1>
+        <div class="game-screen">
+            <div class="container">
+                <div class="party">
+                    <p>勇者</p>
+                    <p id="heroHP"></p>
+                    <p>BP: 50</p>
+                </div>
+                <div class="enemy">
+                    <p id="monsterName"></p>
+                    <p id="monsterHP"></p>
+                    <p>BP: 40</p>
+                </div>
+            </div>
+            <div>
+                <img id="monsterImage" src="" alt="モンスターの画像" />
+            </div>
+        </div>
+        <div class="log">
+            <div id="battleLog"></div>
+            <div id="answers"></div>
+            <div>
+        </div>
+        <div class="result">
+            <p id="accuracy"></p>
+            <button id="returnButton">選択画面に戻る</button>
+        </div>
+        <audio id="battleBGM" src="battle_bgm.mp3" loop></audio>
+        <audio id="endBGM" src="end_bgm.mp3" loop></audio>
+        <script src="script.js"></script>
+    </body>
+</html>

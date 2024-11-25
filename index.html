@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>問題選択画面</title>
+    <link rel="stylesheet" href="sentaku.css">
+    <!-- Chart.jsの読み込み -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>正の数・負の数</h1>
+
+        <!-- 勇者のパラメータ表示 -->
+        <div class="hero-parameters">
+            <h2>勇者のステータス</h2>
+            <ul class="hero-stats">
+                <li>レベル: <span id="heroLevel">1</span></li>
+                <li>ライフ: <span id="heroHP">100</span></li>
+                <li>レベルアップに必要な経験値: <span id="experienceRemaining">0</span></li>
+            </ul>
+        </div>
+
+        <!-- レーダーチャート表示 -->
+        <div class="radar-chart-container">
+            <canvas id="radarChart" width="400" height="400"></canvas>
+        </div>
+
+        <!-- 既存のボタン -->
+        <div class="button-container">
+            <button class="level-button" id="beginner">初級</button>
+            <button class="level-button" id="intermediate">中級</button>
+            <button class="level-button" id="advanced">上級</button>
+        </div>
+    </div>
+
+    <!-- BGM -->
+    <audio id="indexBGM" src="index_bgm.mp3" loop></audio>
+
+    <!-- スクリプト -->
+    <script src="sentaku.js"></script>
+</body>
+</html>
